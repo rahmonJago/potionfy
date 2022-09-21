@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>St Micheal Hospital Website</title>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-query.css">
+</head>
+
+<body>
+    <div class="loader" id="loader"> </div>
+    <div class="container" id="container">
+        <nav class="header">
+            <p>
+                <span>New</span> You can take your Covid-19 Test with us.</p>
+        </nav>
+        <section class="main-section">
+            <video autoplay loop muted plays-inline class="bgVideo">
+                <source src="resources/videos/videoBG2.mp4" alt="BackgroundVideo" type="video/mp4">
+            </video>
+            <nav class="navbar" id="navbar">
+                <div class="logo">
+                    <img src="resources/images/logo.png" alt="OHealth Logo">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        Menu &nbsp;&nbsp;<i class="fa fa-bars"></i>
+                </a>
+                </div>
+                <div class="nav" id="navlist" >
+                    <ul class="navlist">
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Services</a>
+                        </li>
+                        <li>
+                            <a href="">Doctors</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#bmiContainer">Calculate BMI</a>
+                        </li>
+                        <li>
+                            <button class="appointment" id="makeAppointment" onclick="showAppointment(appointmentModal); freeze()">Make an Appointment</button>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Appointment Modal -->
+            <div id="appointmentModal" class="appointmentModal">
+                <span class="close" id="closeAppointment" title="Close Modal" onclick="closeAppointment(appointmentModal); unfreeze()">&times;</span>
+                <p> Start Appointment</p>
+                <div class="appointmentBody">
+                    <div class="appointmentContent">
+                        <div class="appointmentItem">
+                            <img src="resources/images/googleplay.png" alt="Google Play Store">
+                            <a href="https://play.google.com" target="_blank">Get App on Play Store</a>
+                        </div>
+                        <div class="appointmentItem">
+                            <img src="resources/images/app store.png" alt="Apple Store">
+                            <a href="https://play.google.com" target="_blank">Get App on Apple Store</a>
+                        </div>
+                        <div class="appointmentItem">
+                            <img src="resources/images/www.png" alt="Consult via web app">
+                            <a href="https://play.google.com" target="_blank">Consult Via web application</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- The Subscription Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1> Subscribe to Our News Letter </h1>
+                        <span class="close" id="closeSpan" onclick="closeAppointment(myModal)">&times;</span>
+                    </div>
+
+                    <div class="modalDesc">
+                        <p> Get free health and lifestyle tips in your mail daily</p>
+                    </div>
+                    <input type="text" name="modalEmail" id="modalEmail" placeholder="someone@email.com">
+                    <button> Subscribe</button>
+                </div>
+
+            </div>
+            <!-- eND OF mODAL bOX -->
+            <section class="body">
+                <h1> Easy Access to all HealthCare Related Services</h1>
+                <p> Over 130 Specialist Doctors Are Ready To Attend To You Anywhere... Anytime.. Fast And Easy Access To A Better
+                    Healthcare Service, Talk To A Licensed Professional Doctor & Get Medical Consultations At The Tip Of
+                    Your Fingers.</p>
+            </section>
+            <p id ="screen-size">The width of the Screen is</p>
+        </section>
+
+        <!-- Emergency Cases -->
+        <section class="emergencyContainer">
+            <section class="emergencyCases">
+                <h3> For Emergency Cases</h3>
+                <p id="call"> Call and Whatsapp</p>
+                <p> +2348110175727</p>
+                <p> +2348110175635</p>
+                <p> +2348110175793</p>
+            </section>
+            <section class="openingHours">
+                <h3> Opening Hours</h3>
+                <p>
+                    <span> Mon-Friday</span>
+                    <span id="hidden"> jd</span>
+                    <span> 08:00 - 19:00</span>
+                </p>
+                <p>
+                    <span> Saturday</span>
+                    <span> 10:00 - 17:00</span>
+                </p>
+                <p>
+                    <span> Sunday</span>
+                    <span> 10:00 - 17:00</span>
+                </p>
+            </section>
+        </section>
+
+        <!-- About Container -->
+        <section class="aboutContainer">
+            <section class="about">
+                <h1> About Us</h1>
+                <p> Online health company (OHEALTH) is a new telemedicine company dedicated to providing quality health care
+                    services through a proficient online medical platform (Application) that gives patients easy access to
+                    qualified and professional doctors for quality health care delivery. The vision for the company was conceptualized
+                    in 2019, but the journey started in January 2020.
+                </p>
+                <button>
+                    <a href="">Learn More</a>
+                </button>
+
+            </section>
+
+            <section class="aboutImg">
+                <img src="resources/images/nurse.jpg" alt="About Us Image">
+            </section>
+        </section>
+
+        <!-- Services -->
+        <section class="services">
+            <h1> Our HealthCare Services</h1>
+            <p> We Connect Our Users to All Medical Services Available via Mobile Phones and Web Services, We have over 28 different
+                Specialties to attend to our patients, over 100 doctors are available for patients to have multiple options
+                on who to consult</p>
+        </section>
+
+        <section class="serviceDetails">
+            <section class="service1">
+                <img src="resources/images/affordable consultation.jfif" alt="Affordable Consultations">
+                <h1> Affordable Consultations</h1>
+                <p> You can talk to a specialist Doctor at an Affordable Rate and Pocket Friendly Fee, Very Fast and Quality
+                    Treatment Guaranteed</p>
+            </section>
+
+            <section class="service1">
+                <img src="resources/images/laboratory test.jfif" alt="Laboratory Test">
+                <h1> Laboratory Test</h1>
+                <p> You Can Schedule a Lab Test Appointment With Notable and Certified Laboratories, Get The Result Delivered
+                    to Your Ohealth App on Phone or To Your Ohealth Inbox on The Web.
+
+                </p>
+            </section>
+
+            <section class="service1">
+                <img src="resources/images/pharmacy.jfif" alt="Pharmacy">
+                <h1> Pharmacy</h1>
+                <p> Pick up your prescription From Any of The Certified Pharmacies Closest To You, or Have it Delivered To Your
+                    Doorstep. Just One Click Away</p>
+            </section>
+
+            <section class="service1">
+                <img src="resources/images/health booth.jfif" alt="Health Booth">
+                <h1> Health Booth</h1>
+                <p> Ohealth Aims To Provide Easy Access to Healthcare System Regardless of Your Society Status, Ohealth Booth
+                    are Availble at Strategic Places Where getting Good Medical Attention are not Easily Accessible.
+                </p>
+            </section>
+        </section>
+
+        <section class="serviceNew">
+            <section class="service2">
+                <img src="resources/images/phone.jpg" alt="Phone">
+            </section>
+            <section class="service2 myservice">
+                <h1> Get 24/7 Care Right from your Phone</h1>
+                <div class="myList">
+                    <div class="list-type"> </div>
+                    <p> Get unlimited 24/7 chat, voice call and video call with Specialist Doctors at a very low price
+                    </p>
+                </div>
+                <div class="myList">
+                    <div class="list-type"> </div>
+                    <p> Easy Appointment Booking
+                    </p>
+                </div>
+                <div class="myList">
+                    <div class="list-type"> </div>
+                    <p> User's usage satisfaction
+                    </p>
+                </div>
+                <div class="myList">
+                    <div class="list-type"> </div>
+                    <p> Fast and Satisfactory responses from doctors
+                    </p>
+                </div>
+                <div class="myList">
+                    <div class="list-type"> </div>
+                    <p> Enjoy healthy life
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section class="product-container">
+            <h1> Our Products</h1>
+            <p> Here are the Products</p>
+            <div class="products">
+
+                <div class="tester">
+                    <div class="product" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <div class="product-header" id="header1">
+                            <h1> MEN HEALTH</h1>
+                            <p> #49,999.99</p>
+                        </div>
+                        <ul>
+                            <li> Prostate Cancer Screening</li>
+                            <li> Cholesterol level</li>
+                            <li> Blood Sugar</li>
+                            <li> Erection Dysfunction Test</li>
+                            <li> Blood Pressure Test</li>
+                            <li> Kidney Function Test</li>
+                            <li> Liver Test</li>
+                            <li> ElectroCardiogram</li>
+                        </ul>
+
+                    </div>
+                    <button class="orderButton" id="orderButton"> Order Now</button>
+                </div>
+
+                <div class="tester">
+                    <div class="product" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <div class="product-header" id="header2">
+                            <h1> WOMEN HEALTH</h1>
+                            <p>#54,999.99 </p>
+                        </div>
+                        <ul>
+                            <li> Cervical Cancer</li>
+                            <li> Cholesterol level</li>
+                            <li> Blood Sugar</li>
+                            <li> Blood Pressure Test</li>
+                            <li> Kidney Function Test</li>
+                            <li> Liver Test</li>
+                            <li> ElectroCardiogram</li>
+                            <li> Breast Scan</li>
+                        </ul>
+
+                    </div>
+                    <button class="orderButton" id="orderButton"> Order Now</button>
+                </div>
+
+                <div class="tester">
+                    <div class="product" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <div class="product-header" id="header3">
+                            <h1> GENERAL HEALTH</h1>
+                            <P> #39,999.99</P>
+                        </div>
+                        <ul>
+                            <li> GenoType</li>
+                            <li> Blood Group</li>
+                            <li> Blood Sugar</li>
+                            <li> Eye Test</li>
+                            <li> Hepatitis B Screening</li>
+                            <li> Dental Care</li>
+                            <li> Mental Health</li>
+                            <li> Kidney Test</li>
+                        </ul>
+
+                    </div>
+                    <button class="orderButton" id="orderButton"> Order Now</button>
+                </div>
+
+                <div class="tester">
+                    <div class="product" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <div class="product-header" id="header4">
+                            <h1> TELE CONSULTATION ON THE OHEALTH APP</h1>
+                        </div>
+                        <ul>
+                            <li> Consult a Doctor on thE O Health App Using your Mobile Phone</li>
+                            <li> Fast Access</li>
+                            <li> Affordable Prices</li>
+                            <li> Earn while you Refer</li>
+
+                        </ul>
+
+                    </div>
+                    <button class="orderButton" id="orderButton"> Order Now</button>
+                </div>
+
+                <div class="tester">
+                    <div class="product" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <div class="product-header" id="header5">
+                            <h1> COVID-19 AND THE RAPID ANTIGENT TESTER</h1>
+                        </div>
+                        <ul>
+                            <li> Result in 24Hrs</li>
+                            <li> Fit To Fly Certificate for Travellers</li>
+                            <li> Home Service</li>
+
+                        </ul>
+
+                    </div>
+                    <button class="orderButton" id="orderButton2"> Order Now</button>
+                </div>
+
+                <!-- We'll change this later -->
+
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="achievement-container">
+            <div class="achieve">
+                <h1> Our Achievements</h1>
+            </div>
+            <div class="achieve2">
+                <div class="counter">
+                    <h1> 12,000</h1>
+                    <p> Consultations</p>
+                </div>
+                <div class="counter">
+                    <h1> 2,000</h1>
+                    <p> Appointments</p>
+                </div>
+                <div class="counter">
+                    <h1> 10,000</h1>
+                    <p> Users</p>
+                </div>
+                <div class="counter">
+                    <h1> 120</h1>
+                    <p> Doctors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial-container">
+            <h1> Testimonials</h1>
+            <p> Our Happy Customer Says</p>
+            <div class="testimonial">
+                <div class="testimonial1">
+                    <img src="resources/images/man.png" alt="customer icon">
+                    <p> I had an experience. I spoke with the doctor without leaving my house and I got instant solution at a
+                        very affordable price.
+                    </p>
+                    <h1> Mrs. H. Oyetunde</h1>
+                    <p> User</p>
+                </div>
+
+                <div class="testimonial1">
+                    <img src="resources/images/man.png" alt="customer icon">
+                    <p> Sincerely Ohealth App is an amazing medical application which every home must have. I consulted a paediatrician
+                        for my baby at the convevience of my home at a very cheap amount and was perfectly attended to. If
+                        you are yet to have Ohealth App, you are missing. The world is moving fast with technology. Do not
+                        be left out of it.
+                        <br> Ohealth! I give it to you.
+                    </p>
+
+                    <h1> Mrs. T. Oluwashina</h1>
+                    <p> User</p>
+                </div>
+
+                <div class="testimonial1">
+                    <img src="resources/images/man.png" alt="customer icon">
+                    <p> I heard about Ohealth on the radio, so I downloaded the app. To my surprise and the first time in my
+                        life I had the luxury of choosing a specialist. My son had been battling with boil reappearing on
+                        his face.
+                        <br> Antibiotics had been used to no avail as prescribed by non specialist doctors but immediately an
+                        epidermologist attended to him on Ohealth App, all she prscribed was a cream and the case was resolved.
+                        <br> My son is fine now and I am very happy and impressed with the efforts of the crew.
+
+                    </p>
+                    <h1> Mrs. Yusuf</h1>
+                    <p> User</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSCRIPTION -->
+        <section class="subscription">
+            <h1> Subscribe to Our NewsLetter</h1>
+            <p> Get free health and lifestyle tips in your mail daily.</p>
+            <div class="subscriptionForm">
+                <input type="email" name="email" required placeholder="someone@gmail.com" autocomplete="off">
+                <button> Subscribe</button>
+            </div>
+        </section>
+
+        <!-- PARTNERS -->
+        <section class="partner">
+            <h1> Our Partners</h1>
+            <p> We have since partnered with</p>
+            <div class="partnerImage">
+                <div class="partner1">
+                    <img src="resources/images/oyshia.jpeg" alt="Oyo State Health Insurance Agency">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/babcock.jpeg" alt="Babcock Teaching Hospital">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/uch.jpeg" alt="University College Hospital Ibadan">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/bhin.png" alt="Brain Health Initiative Nigeria">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/ufitfly.png" alt="You Fit Fly Travelling Agency">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/dactoz.png" alt="Dactoz Travelling Agency">
+                </div>
+                <div class="partner1">
+                    <img src="resources/images/nugle.jpeg" alt="National Union of Local Government Employee">
+                </div>
+            </div>
+        </section>
+
+        <!-- BMI CALCULATOR -->
+        <section class="bmiContainer" id="bmiContainer">
+            <div class="bmiText">
+                <h1> BMI Calculator</h1>
+                <p>
+                    BMI is a screening tool that can indicate whether a person is underweight or if they have a healthy weight, excess weight,
+                    or obesity. Your Body Mass Index is your weight(kilograms) divided by the square of height(meters). High
+                    BMI can indicate high body fat. Having too much weight can lead to a variety of health conditions, such
+                    as type 2 diabetes, high blood pressure, and cardiovascular problems. A weight that is too low can increase
+                    the risk of malnutrition, osteoporosis and anemia.
+                </p>
+
+            </div>
+            <div class="bmiCalculator">
+                <h1> Please Provide the Correct Details</h1>
+                <div class="bmiInput">
+                    <input type="number" name="height" id="height" placeholder="Height in cm">
+
+                    <input type="number" name="weight" id="weight" placeholder="Weight in KG">
+                </div>
+                <button id="calculateBMI" onclick="calculateBMI()"> Calculate</button>
+                <p> Your BMI is:</p>
+
+                <p id="BMIresult">_ _ _ _ </p>
+                <div class="bmiLevelContainer" id="bmiLevelContainer">
+                    <div id="bmiLevel"> </div>
+                </div>
+                <p id="bmiComment"></p>
+
+            </div>
+        </section>
+
+        <!-- SPECIALISTS DOCTORS -->
+        <section class="specialists">
+            <h1 id="meet"> Meet Our Specialists Doctors</h1>
+            <p id="meet-desc"> We have over 130 Specialist Doctors Available on Our Platform Ready to Answer your Queries and Concerns</p>
+            <div class="doctor-container">
+                <div class="doctor">
+                    <img src="resources/images/doctor-6.jpg" alt="Doctor 1">
+                    <p class="doctor-name"> Dr. Ajibola Oladiran</p>
+                    <p class="specialization"> Orthopaedics & Trauma Surgeon</p>
+                    <p class="specialization-description"> Surgeon of injuries and diseases of body's musculoskeletal system</p>
+                </div>
+
+                <div class="doctor">
+                    <img src="resources/images/doctor-1.png" alt="Doctor 1">
+                    <p class="doctor-name"> Doctor Olufisayo Elugbadebo</p>
+                    <p class="specialization"> Psychiatrist</p>
+                    <p class="specialization-description"> Mental health and including substance use disorders specialist</p>
+                </div>
+
+                <div class="doctor">
+                    <img src="resources/images/doctor-2.png" alt="Doctor 1">
+                    <p class="doctor-name"> Dr. Lawrence Adebusoye</p>
+                    <p class="specialization"> Geriatrician</p>
+                    <p class="specialization-description"> Adult health care specialist</p>
+                </div>
+
+                <div class="doctor">
+                    <img src="resources/images/doctor-3.png" alt="Doctor 1">
+                    <p class="doctor-name"> Dr. Olushola Ajamu</p>
+                    <p class="specialization"> Urologist</p>
+                    <p class="specialization-description"> Specialist of the diseases of the urinary tract in both men and women.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE MAP -->
+        <section class="map">
+            <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2001910749896!2d3.866794114775289!3d7.331399994709137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398fff8dfb67a3%3A0xb1ebbac641c19a20!2sGASTAB!5e0!3m2!1sen!2sng!4v1661864387453!5m2!1sen!2sng"
+                tabindex="1" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="footer">
+            <section class="footer-container">
+                <div class="footer-1">
+                    <h2> OHealth</h2>
+                    
+                    <p> Ohealth Is An Online Application That Bridges The Gap Between Doctors And Patients.</p>
+                </div>
+
+                <div class="footer-1">
+                    <h2> Quick Links</h2>
+                    <ul>
+                        <li>
+                            <a href=""> About</a>
+                        </li>
+                        <li>
+                            <a href=""> Services</a>
+                        </li>
+                        <li>
+                            <a href=""> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-1">
+                    <h2> Office</h2>
+                    <p> 42, Kenneth Dike Way, Opp. SS Peter & Paul Catholic Major Seminary, Bodija Ibadan, Oyo State, Nigeria.</p>
+                    <p> +2348110175635, +2348110175793, +2348110175727</p>
+                    <p>
+                        <a href="mailto:contact@ohealthng.com">contact@ohealthng.com</a>
+                    </p>
+                </div>
+            </section>
+            <p> Copyright &copy; 2022 Online Health Company Limited</p>
+
+            <!-- SHOW CHAT MODAL -->
+            <div class="chat" id="chat">
+
+                <!-- The Chat Modal -->
+                <div id="whatsappModal" class="whatsappModal">
+
+                    <!-- Modal content -->
+                    <div class="chat-content">
+                        <div class="chat-header">
+                            <img src="resources/images/logo2.png" alt="">
+                            <div class="ohealth">
+                                <h1> OHealth</h1>
+                                <p> Typically replies instantly</p>
+                            </div>
+                            <span class="close" id ="closeChat" onclick="closeAppointment(whatsappModal)">&times;</span>
+
+
+                        </div>
+
+                        <div class="chatBody">
+                            <div class="chatContent">
+                                <p> OHealth</p>
+                                <p> Hi there &#129305;</p>
+                                <p> How Can i help you today?</p>
+                            </div>
+                        </div>
+                        <div class="chatFooter">
+                            <a href="https://api.whatsapp.com/send?phone=2348108630775" target="_blank">
+                                <button id="chatBtn">
+                                    <i class="fa fa-whatsapp">&nbsp;&nbsp;</i>Start Chat</button>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- eND OF mODAL bOX -->
+                <button id ="showChat" title="Show Chat Bot" onclick="showAppointment(whatsappModal)"><i class="fa fa-comment" >&nbsp;&nbsp;</i>Live Chat</button>
+            </div>
+
+        </section>
+
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
